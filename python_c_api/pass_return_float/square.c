@@ -1,22 +1,26 @@
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
 
+double square(double input)
+{
+	return input*input;
+}
+
 static PyObject *
-square (PyObject *self, PyObject *args)
+square_py (PyObject *self, PyObject *args)
 {
     double input;
-    int sts;
 
     if (!PyArg_ParseTuple(args, "d", &input))
         return NULL;
 
-    double output = input*input;
+    double output = square(input);
 
     return PyFloat_FromDouble(output);
 }
 
 static PyMethodDef squareMethods[] = {
-    {"square",  square, METH_VARARGS,
+    {"square",  square_py, METH_VARARGS,
      "Square a number."},
     {NULL, NULL, 0, NULL}        /* Sentinel */
 };
