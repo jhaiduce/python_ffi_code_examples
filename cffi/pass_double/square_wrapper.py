@@ -30,4 +30,6 @@ def square(x):
 
 if __name__=='__main__':
     
-    print(square(2))
+    s=square(2)
+    assert s==4
+    print("Success: s={}".format(s))

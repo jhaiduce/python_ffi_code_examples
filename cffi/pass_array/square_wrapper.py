@@ -47,4 +47,6 @@ def square(x):
 
 if __name__=='__main__':
     
-    print(square([2,3,4]))
+    s = square([2,3,4])
+    assert list(s)==[4,9,16]
+    print("Success: s={}".format(s))
