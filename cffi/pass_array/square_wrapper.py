@@ -29,11 +29,17 @@ def square(x):
 
     import numpy as np
 
-    input_arr = np.ascontiguousarray(x,dtype=np.double)
-    output_arr = np.ascontiguousarray(np.empty(input_arr.shape),dtype=np.double)
+    input_arr = np.ascontiguousarray(
+                    x,
+                    dtype=np.double)
+    output_arr = np.ascontiguousarray(
+                    np.empty(input_arr.shape),
+                    dtype=np.double)
 
-    input_ptr = ffi.cast('double*',input_arr.ctypes.data)
-    output_ptr = ffi.cast('double*',output_arr.ctypes.data)
+    input_ptr = ffi.cast(
+                    'double*',input_arr.ctypes.data)
+    output_ptr = ffi.cast(
+                    'double*',output_arr.ctypes.data)
 
     lib.square(input_ptr,output_ptr,input_arr.size)
 
