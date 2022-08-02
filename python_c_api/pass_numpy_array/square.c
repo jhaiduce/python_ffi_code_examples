@@ -44,7 +44,7 @@ square_np (PyObject *self, PyObject *args)
   double * out_data = (double *) PyArray_DATA(output);
 
   /* Square all elements */
-  square(in_data, out_data, size);
+  square(in_data, out_data, len);
 
   /* Decrement reference count of in_arr since it won't be returned */
   Py_DECREF(in_arr);
