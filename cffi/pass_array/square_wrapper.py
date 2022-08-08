@@ -37,11 +37,12 @@ def square(x):
                     dtype=np.double)
 
     input_ptr = ffi.cast(
-                    'double*',input_arr.ctypes.data)
+                    'double*',
+                    input_arr.ctypes.data)
     output_ptr = ffi.cast(
-                    'double*',output_arr.ctypes.data)
+                    'double*', output_arr.ctypes.data)
 
-    lib.square(input_ptr,output_ptr,input_arr.size)
+    lib.square(input_ptr, output_ptr, input_arr.size)
 
     return output_arr
 

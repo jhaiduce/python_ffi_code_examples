@@ -22,7 +22,8 @@ def get_sharedlib_extension():
     return ext
 
 ext=get_sharedlib_extension()
-lib=ffi.dlopen('./libsquare'+ext)
+libfile = './libsquare'+ext
+lib=ffi.dlopen(libfile)
 
 # Wrapper for the C function 'square'
 def square(x):
