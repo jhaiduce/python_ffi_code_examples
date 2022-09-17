@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.9.5)
 
-project(square)
+project(square C Fortran)
 
 add_library(square SHARED square.c)
 
